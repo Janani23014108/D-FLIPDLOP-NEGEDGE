@@ -28,17 +28,47 @@ Next state of D flip-flop is always equal to data input, D for every positive tr
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Define Module: Define a Verilog module for the D flip-flop with inputs (D, CLK) and outputs (Q, Q_bar).
+
+2.Declare Inputs and Outputs: Declare input and output ports for the module.
+
+3.Implement Flip-Flop Logic: Write Verilog code to implement the D flip-flop logic based on its functional table. Use a synchronous always @(posedge CLK) block to trigger the flip-flop on the positive edge of the clock signal.
+
+4.Simulate Using Testbench: Write a Verilog testbench to simulate the behavior of the D flip-flop under different input conditions.
+
+5.Apply Input Stimuli: In the testbench, apply various combinations of input stimuli (D, CLK) to cover all possible input states.
+
+6.Verify Output Behavior: Verify that the output behavior of the D flip-flop matches the expected behavior defined by its functional table.
+
+7.Check for Race Conditions: Ensure that there are no race conditions or undefined states in the design by analyzing the timing and sequence of input changes.
 
 **PROGRAM**
+```
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+Developed by:J.JANANI
+RegisterNumber:212223230085
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+module DFlipflop(D,Clock,Q,Qbar);
+input D,Clock;
+output reg Q,Qbar;
+always @ (negedge Clock)// use negative edge clock for triggereing condition 
+//compute D flipflop logic here
+begin
+ 	Q=D;
+Qbar=~D;
+end
+ endmodule
 */
-
+```
 **RTL LOGIC FOR FLIPFLOPS**
+![327085906-93b7bbc1-f41d-4e26-a171-51914c59c4e9](https://github.com/Janani23014108/D-FLIPDLOP-NEGEDGE/assets/146822085/1193d0ed-19c8-4df2-9e27-ff16c5c5c5d3)
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![327086051-eaf6839b-ee50-4630-ba02-2fb2c6bed319](https://github.com/Janani23014108/D-FLIPDLOP-NEGEDGE/assets/146822085/5675ee6e-2b1f-4aac-a0c8-644d30a14212)
 
 
 **RESULTS**
+
+
+Thus the program to implemention of D flipflop using verilog and validating their functionality using their functional tables are executed successfully.
